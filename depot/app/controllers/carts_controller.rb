@@ -20,7 +20,7 @@ class CartsController < ApplicationController
       redirect_to store_url, :notice => 'Invalid Cart'
     else
       respond_to do |format|
-        format.html # show.html.erb
+        format.html { redirect_to(store_url) }# show.html.erb
         format.json { render json: @cart }
       end
     end
